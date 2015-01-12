@@ -16,10 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    //Creamos una window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
+    self.window.backgroundColor = [UIColor orangeColor]; //color de fondo
+    
+    //la activamos
+    [self.window makeKeyAndVisible]; //makeKey es que tenga el foco
+    
+    
     return YES;
 }
 
