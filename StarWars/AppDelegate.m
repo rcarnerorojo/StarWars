@@ -41,19 +41,19 @@
                                                                             image:vaderImage
                                                                         soundData:vaderSound];
     
-    
-    // Creamos el controlador principal
-    // estamos cambiando el controlador principal para probar los distintos elementos
-    
-//    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:vader];
-//    [self.window setRootViewController:charVC];
-    
+    // Creamos los controlador principal
+    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:vader];
     RCRWikiViewController *wVC = [[RCRWikiViewController alloc] initWithModel:vader];
-    [self.window setRootViewController:wVC];
+
+    //Creamos el combinador
+    UITabBarController  *tabVC = [[UITabBarController alloc] init];
+    [tabVC setViewControllers:@[charVC, wVC]];
     
-    //la activamos
+    //Lo asignamos como root
+    [self.window setRootViewController:tabVC];
+    
+    //Activamos la window
     [self.window makeKeyAndVisible]; //makeKey es que tenga el foco
-    
     
     return YES;
 }
