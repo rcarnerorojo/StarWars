@@ -9,10 +9,11 @@
 #import "AppDelegate.h"
 #import "RCRStarWarsCharacter.h"
 #import "RCRCharacterViewController.h"
+#import "RCRWikiViewController.h"
 
-@interface AppDelegate ()
+/*@interface AppDelegate ()
 
-@end
+@end*/
 
 @implementation AppDelegate
 
@@ -40,9 +41,15 @@
                                                                             image:vaderImage
                                                                         soundData:vaderSound];
     
+    
     // Creamos el controlador principal
-    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:vader];
-    [self.window setRootViewController:charVC];
+    // estamos cambiando el controlador principal para probar los distintos elementos
+    
+//    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:vader];
+//    [self.window setRootViewController:charVC];
+    
+    RCRWikiViewController *wVC = [[RCRWikiViewController alloc] initWithModel:vader];
+    [self.window setRootViewController:wVC];
     
     //la activamos
     [self.window makeKeyAndVisible]; //makeKey es que tenga el foco
