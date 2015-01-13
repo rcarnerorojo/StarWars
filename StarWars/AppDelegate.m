@@ -43,14 +43,16 @@
     
     // Creamos los controlador principal
     RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:vader];
-    RCRWikiViewController *wVC = [[RCRWikiViewController alloc] initWithModel:vader];
+//    RCRWikiViewController *wVC = [[RCRWikiViewController alloc] initWithModel:vader];
 
     //Creamos el combinador
-    UITabBarController  *tabVC = [[UITabBarController alloc] init];
-    [tabVC setViewControllers:@[charVC, wVC]];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:charVC];
+// es lo mismo
+//    UINavigationController *navVC = [[UINavigationController alloc] init];
+//    [navVC pushViewController:charVC animated:NO];
     
     //Lo asignamos como root
-    [self.window setRootViewController:tabVC];
+    [self.window setRootViewController:navVC];
     
     //Activamos la window
     [self.window makeKeyAndVisible]; //makeKey es que tenga el foco

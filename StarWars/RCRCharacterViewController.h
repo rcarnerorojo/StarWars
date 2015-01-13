@@ -19,5 +19,6 @@
 -(id) initWithModel:(RCRStarWarsCharacter*)model;
 
 -(IBAction)playSound:(id)sender;
+-(IBAction)displayWikipedia:(id)sender;
 
 @end

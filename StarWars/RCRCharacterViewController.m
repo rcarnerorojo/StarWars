@@ -8,6 +8,7 @@
 
 #import "RCRCharacterViewController.h"
 #import "CafPlayer.h"
+#import "RCRWikiViewController.h"
 
 @implementation RCRCharacterViewController
 
@@ -35,6 +36,13 @@
     
     self.player = [CafPlayer cafPlayer];
     [self.player playSoundData:self.model.soundData];
+    
+}
+
+-(IBAction)displayWikipedia:(id)sender{
+    
+    RCRWikiViewController *wVC = [[RCRWikiViewController alloc] initWithModel:self.model];
+    [self.navigationController pushViewController:wVC animated:NO];
     
 }
 

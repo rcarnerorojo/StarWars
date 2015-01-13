@@ -16,17 +16,23 @@
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hGb-iV-Jsk">
-                    <rect key="frame" x="0.0" y="0.0" width="768" height="925"/>
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qII-6G-CbT">
-                    <rect key="frame" x="0.0" y="925" width="768" height="44"/>
+                    <rect key="frame" x="0.0" y="980" width="768" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="play" id="U2b-F6-eIz">
                             <inset key="imageInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="playSound:" destination="-1" id="tVT-AN-foP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="QTj-Df-6lv"/>
+                        <barButtonItem title="Wikipedia" id="twa-PO-So1">
+                            <connections>
+                                <action selector="displayWikipedia:" destination="-1" id="OaJ-ov-vf9"/>
                             </connections>
                         </barButtonItem>
                     </items>
