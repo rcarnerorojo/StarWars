@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "RCRStarWarsCharacter.h"
+#import "RCRCharacterViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +23,26 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     self.window.backgroundColor = [UIColor orangeColor]; //color de fondo
+    
+    // Creamos el modelo
+    
+    NSURL *vaderURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/Darth_Vader"];
+    
+    NSBundle *bundle = [NSBundle mainBundle];//ruta al bundle de la aplicación
+    NSURL *soundURL = [bundle URLForResource:@"vader" withExtension:@"caf"];
+    NSData *vaderSound = [NSData dataWithContentsOfURL:soundURL];
+
+    UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
+    
+    RCRStarWarsCharacter *vader = [RCRStarWarsCharacter starWarsCharacterWithName:@"Anakin Skywalker"
+                                                                            alias:@"Darth Vader"
+                                                                         wikiPage:vaderURL
+                                                                            image:vaderImage
+                                                                        soundData:vaderSound];
+    
+    // Creamos el controlador principal
+    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:vader];
+    [self.window setRootViewController:charVC];
     
     //la activamos
     [self.window makeKeyAndVisible]; //makeKey es que tenga el foco
