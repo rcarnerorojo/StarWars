@@ -30,6 +30,7 @@
 		E6ADCCBE1A64044A00F1196A /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = E6ADCCB01A64044A00F1196A /* yoda.caf */; };
 		E6ADCCBF1A64044A00F1196A /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6ADCCB11A64044A00F1196A /* yoda.jpg */; };
 		E6D16DBC1A6676B400E7DD3C /* RCRStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D16DBB1A6676B400E7DD3C /* RCRStarWarsUniverse.m */; };
+		E6D16DBF1A6683B400E7DD3C /* RCRStarWarsUniverseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D16DBE1A6683B400E7DD3C /* RCRStarWarsUniverseViewController.m */; };
 		E6D96B931A651AA60039461B /* RCRCafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D96B921A651AA60039461B /* RCRCafPlayer.m */; };
 		E6D96B971A6520C60039461B /* RCRWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D96B951A6520C60039461B /* RCRWikiViewController.m */; };
 		E6D96B981A6520C60039461B /* RCRWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D96B961A6520C60039461B /* RCRWikiViewController.xib */; };
@@ -77,6 +78,8 @@
 		E6ADCCB11A64044A00F1196A /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
 		E6D16DBA1A6676B400E7DD3C /* RCRStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRStarWarsUniverse.h; sourceTree = "<group>"; };
 		E6D16DBB1A6676B400E7DD3C /* RCRStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRStarWarsUniverse.m; sourceTree = "<group>"; };
+		E6D16DBD1A6683B400E7DD3C /* RCRStarWarsUniverseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRStarWarsUniverseViewController.h; sourceTree = "<group>"; };
+		E6D16DBE1A6683B400E7DD3C /* RCRStarWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRStarWarsUniverseViewController.m; sourceTree = "<group>"; };
 		E6D96B911A651AA60039461B /* RCRCafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRCafPlayer.h; sourceTree = "<group>"; };
 		E6D96B921A651AA60039461B /* RCRCafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRCafPlayer.m; sourceTree = "<group>"; };
 		E6D96B941A6520C60039461B /* RCRWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRWikiViewController.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				E6ADCC9D1A63F70100F1196A /* RCRCharacterViewController.h */,
 				E6ADCC9E1A63F70100F1196A /* RCRCharacterViewController.m */,
 				E6ADCC9F1A63F70100F1196A /* RCRCharacterViewController.xib */,
+				E6D16DBD1A6683B400E7DD3C /* RCRStarWarsUniverseViewController.h */,
+				E6D16DBE1A6683B400E7DD3C /* RCRStarWarsUniverseViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				E6ADCC7F1A63E50000F1196A /* AppDelegate.m in Sources */,
 				E6ADCC9B1A63F08300F1196A /* RCRStarWarsCharacter.m in Sources */,
 				E6D96B931A651AA60039461B /* RCRCafPlayer.m in Sources */,
+				E6D16DBF1A6683B400E7DD3C /* RCRStarWarsUniverseViewController.m in Sources */,
 				E6ADCCA01A63F70100F1196A /* RCRCharacterViewController.m in Sources */,
 				E6D96B971A6520C60039461B /* RCRWikiViewController.m in Sources */,
 				E6ADCC7C1A63E50000F1196A /* main.m in Sources */,

@@ -16,11 +16,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hGb-iV-Jsk">
-                    <rect key="frame" x="0.0" y="65" width="768" height="804"/>
+                    <rect key="frame" x="0.0" y="65" width="768" height="851"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qII-6G-CbT">
-                    <rect key="frame" x="0.0" y="863" width="768" height="44"/>
+                    <rect key="frame" x="0.0" y="916" width="768" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="play" id="U2b-F6-eIz">

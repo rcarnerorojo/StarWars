@@ -128,12 +128,12 @@
 
 -(RCRStarWarsCharacter *) imperialCharacterAtIndex:(NSUInteger) index{
     
-    return [self.rebels objectAtIndex:index];
+    return [self.imperials objectAtIndex:index];
 }
 
 -(RCRStarWarsCharacter *) rebelCharacterAtIndex:(NSUInteger) index{
     
-    return [self.imperials objectAtIndex:index];
+    return [self.rebels objectAtIndex:index];
 }
 
 @end
