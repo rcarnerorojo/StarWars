@@ -9,9 +9,9 @@
 //  http://www.cocoaosx.com/2011/06/20/como-reproducir-sonidos-en-ios/
 //
 
-#import "CafPlayer.h"
+#import "RCRCafPlayer.h"
 
-@implementation CafPlayer
+@implementation RCRCafPlayer
 @synthesize player;
 
 +(id) cafPlayer{

@@ -29,7 +29,8 @@
 		E6ADCCBD1A64044A00F1196A /* vader.caf in Resources */ = {isa = PBXBuildFile; fileRef = E6ADCCAF1A64044A00F1196A /* vader.caf */; };
 		E6ADCCBE1A64044A00F1196A /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = E6ADCCB01A64044A00F1196A /* yoda.caf */; };
 		E6ADCCBF1A64044A00F1196A /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6ADCCB11A64044A00F1196A /* yoda.jpg */; };
-		E6D96B931A651AA60039461B /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D96B921A651AA60039461B /* CafPlayer.m */; };
+		E6D16DBC1A6676B400E7DD3C /* RCRStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D16DBB1A6676B400E7DD3C /* RCRStarWarsUniverse.m */; };
+		E6D96B931A651AA60039461B /* RCRCafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D96B921A651AA60039461B /* RCRCafPlayer.m */; };
 		E6D96B971A6520C60039461B /* RCRWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D96B951A6520C60039461B /* RCRWikiViewController.m */; };
 		E6D96B981A6520C60039461B /* RCRWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D96B961A6520C60039461B /* RCRWikiViewController.xib */; };
 /* End PBXBuildFile section */
@@ -74,8 +75,10 @@
 		E6ADCCAF1A64044A00F1196A /* vader.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = vader.caf; sourceTree = "<group>"; };
 		E6ADCCB01A64044A00F1196A /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
 		E6ADCCB11A64044A00F1196A /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
-		E6D96B911A651AA60039461B /* CafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafPlayer.h; sourceTree = "<group>"; };
-		E6D96B921A651AA60039461B /* CafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafPlayer.m; sourceTree = "<group>"; };
+		E6D16DBA1A6676B400E7DD3C /* RCRStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRStarWarsUniverse.h; sourceTree = "<group>"; };
+		E6D16DBB1A6676B400E7DD3C /* RCRStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRStarWarsUniverse.m; sourceTree = "<group>"; };
+		E6D96B911A651AA60039461B /* RCRCafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRCafPlayer.h; sourceTree = "<group>"; };
+		E6D96B921A651AA60039461B /* RCRCafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRCafPlayer.m; sourceTree = "<group>"; };
 		E6D96B941A6520C60039461B /* RCRWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRWikiViewController.h; sourceTree = "<group>"; };
 		E6D96B951A6520C60039461B /* RCRWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRWikiViewController.m; sourceTree = "<group>"; };
 		E6D96B961A6520C60039461B /* RCRWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRWikiViewController.xib; sourceTree = "<group>"; };
@@ -120,9 +123,9 @@
 		E6ADCC781A63E50000F1196A /* StarWars */ = {
 			isa = PBXGroup;
 			children = (
-				E6ADCCA21A63F70900F1196A /* Controllers */,
 				E6ADCC7D1A63E50000F1196A /* AppDelegate.h */,
 				E6ADCC7E1A63E50000F1196A /* AppDelegate.m */,
+				E6ADCCA21A63F70900F1196A /* Controllers */,
 				E6ADCC9C1A63F08800F1196A /* Models */,
 				E6ADCC801A63E50000F1196A /* Images.xcassets */,
 				E6ADCC821A63E50000F1196A /* LaunchScreen.xib */,
@@ -164,6 +167,8 @@
 			children = (
 				E6ADCC9A1A63F08300F1196A /* RCRStarWarsCharacter.m */,
 				E6ADCC991A63F08300F1196A /* RCRStarWarsCharacter.h */,
+				E6D16DBA1A6676B400E7DD3C /* RCRStarWarsUniverse.h */,
+				E6D16DBB1A6676B400E7DD3C /* RCRStarWarsUniverse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -205,8 +210,8 @@
 		E6ADCCC01A64046700F1196A /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				E6D96B911A651AA60039461B /* CafPlayer.h */,
-				E6D96B921A651AA60039461B /* CafPlayer.m */,
+				E6D96B911A651AA60039461B /* RCRCafPlayer.h */,
+				E6D96B921A651AA60039461B /* RCRCafPlayer.m */,
 			);
 			name = Sound;
 			sourceTree = "<group>";
@@ -326,9 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D16DBC1A6676B400E7DD3C /* RCRStarWarsUniverse.m in Sources */,
 				E6ADCC7F1A63E50000F1196A /* AppDelegate.m in Sources */,
 				E6ADCC9B1A63F08300F1196A /* RCRStarWarsCharacter.m in Sources */,
-				E6D96B931A651AA60039461B /* CafPlayer.m in Sources */,
+				E6D96B931A651AA60039461B /* RCRCafPlayer.m in Sources */,
 				E6ADCCA01A63F70100F1196A /* RCRCharacterViewController.m in Sources */,
 				E6D96B971A6520C60039461B /* RCRWikiViewController.m in Sources */,
 				E6ADCC7C1A63E50000F1196A /* main.m in Sources */,

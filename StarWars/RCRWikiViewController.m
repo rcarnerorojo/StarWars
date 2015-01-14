@@ -54,4 +54,11 @@
     return YES;
 }
 
+-(void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    
+    NSLog(@"Error de carga de la web");
+    //cargar una página con mensaje de error
+    
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "RCRCharacterViewController.h"
-#import "CafPlayer.h"
+#import "RCRCafPlayer.h"
 #import "RCRWikiViewController.h"
 
 @implementation RCRCharacterViewController
@@ -34,7 +34,7 @@
 
 -(IBAction)playSound:(id)sender{
     
-    self.player = [CafPlayer cafPlayer];
+    self.player = [RCRCafPlayer cafPlayer];
     [self.player playSoundData:self.model.soundData];
     
 }

@@ -8,13 +8,13 @@
 
 @import UIKit;
 #import "RCRStarWarsCharacter.h"
-#import "CafPlayer.h"
+#import "RCRCafPlayer.h"
 
 @interface RCRCharacterViewController : UIViewController
 
 @property (strong,nonatomic) RCRStarWarsCharacter *model;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
-@property (strong,nonatomic) CafPlayer *player;
+@property (strong,nonatomic) RCRCafPlayer *player;
 
 -(id) initWithModel:(RCRStarWarsCharacter*)model;
 

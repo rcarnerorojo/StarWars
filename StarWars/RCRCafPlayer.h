@@ -10,7 +10,7 @@
 #import <AVFoundation/AVAudioPlayer.h>
 
 
-@interface CafPlayer : NSObject {
+@interface RCRCafPlayer : NSObject {
     
 }
 
