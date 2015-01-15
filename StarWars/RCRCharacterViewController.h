@@ -9,8 +9,9 @@
 @import UIKit;
 #import "RCRStarWarsCharacter.h"
 #import "RCRCafPlayer.h"
+#import "RCRStarWarsUniverseViewController.h"
 
-@interface RCRCharacterViewController : UIViewController
+@interface RCRCharacterViewController : UIViewController <UISplitViewControllerDelegate, RCRStarWarsUniverseViewControllerDelegate>
 
 @property (strong,nonatomic) RCRStarWarsCharacter *model;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;

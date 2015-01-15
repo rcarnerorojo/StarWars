@@ -26,8 +26,7 @@
     [super viewWillAppear:animated];
     
     //sincronizo modelo -> vista
-    self.photoView.image = self.model.photo;
-    
+    [self syncWithModel];
 }
 
 #pragma mark - Actions
@@ -46,9 +45,45 @@
     
 }
 
+#pragma mark - UISplitViewControllerDelegate
+
+- (void)splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
+    
+    if (displayMode == UISplitViewControllerDisplayModePrimaryHidden){
+        
+        //Hay que poner el botón en mi barra de navegación
+        self.navigationItem.rightBarButtonItem = svc.displayModeButtonItem;
+        
+    }else if (displayMode == UISplitViewControllerDisplayModeAllVisible){
+        
+        //Hay que quitar el botón de la barra de navegación
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - RCRStarWarsUniverseViewControllerDelegate
+
+-(void) starWarsUniverseViewController:(RCRStarWarsUniverseViewController *)uVC didSelectCharacter:(RCRStarWarsCharacter *)character{
+    
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    //me dicen que cambie mi modelo
+    self.model = character;
+    [self syncWithModel];
+    
+}
+
+#pragma mark - Utils
+
+-(void) syncWithModel{
+    
+    self.photoView.image = self.model.photo;
+    self.title = self.model.alias;
+}
+
 
 @end

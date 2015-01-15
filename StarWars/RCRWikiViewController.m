@@ -7,6 +7,7 @@
 //
 
 #import "RCRWikiViewController.h"
+#import "RCRStarWarsUniverseViewController.h"
 
 @implementation RCRWikiViewController
 
@@ -24,12 +25,27 @@
     
     [super viewWillAppear:animated];
     
+    //Alta en notificaciones
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(notifyThatCharacterDidChange:)
+               name:CHARACTER_DID_CHANGE_NOTIFICATION_NAME
+             object:nil];
+    
     //Asignamos delegado
     self.browser.delegate = self;
     
     //sincronizar la vista
-    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiPage]];
+    [self syncViewWithModel];
+}
 
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    //Baja en notificaciones
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +59,9 @@
     
     //decirle al activityView que pare. Se ocultará sólo por haber marcado la opción
     [self.activityView stopAnimating];
+    self.activityView.hidden = YES;
 }
+
 -(BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
     //no podemos eliminarlo por completo porque es necesario cargar el link inicial
@@ -59,6 +77,35 @@
     NSLog(@"Error de carga de la web");
     //cargar una página con mensaje de error
     
+}
+
+#pragma mark - Notifications
+//CHARACTER_DID_CHANGE_NOTIFICATION_NAME
+-(void)notifyThatCharacterDidChange:(NSNotification*)n{
+    
+    //Extraigo el personaje
+    RCRStarWarsCharacter *newModel = [n.userInfo objectForKey:CHARACTER_KEY];
+    
+    //Cambiar mi modelo
+    self.model = newModel;
+    
+    //Sincronizar vistas con el modelo nuevo
+    [self syncViewWithModel];
+}
+
+#pragma mark - Utils
+
+-(void) syncViewWithModel{
+    
+    //Mostrar el activiy
+    self.activityView.hidden = NO;
+    
+    //Empezar la animación
+    [self.activityView startAnimating];
+    
+    //Cargar la url
+    NSURLRequest *r = [NSURLRequest requestWithURL:self.model.wikiPage];
+    [self.browser loadRequest:r];
 }
 
 @end

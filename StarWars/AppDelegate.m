@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RCRStarWarsUniverse.h"
 #import "RCRStarWarsUniverseViewController.h"
+#import "RCRCharacterViewController.h"
 
 @implementation AppDelegate
 
@@ -23,17 +24,26 @@
     // Creamos el modelo
     RCRStarWarsUniverse *model = [[RCRStarWarsUniverse alloc]init];
     
-    // Creamos los controlador principal
+    // Creamos los controladores
     RCRStarWarsUniverseViewController *uVC = [[RCRStarWarsUniverseViewController alloc]initWithModel:model style:UITableViewStylePlain];
+    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:[model imperialCharacterAtIndex:0]];
     
-    //Creamos el combinador
-    UINavigationController *navVC = [[UINavigationController alloc]init];
+    //Creamos los combinadores
+    UINavigationController *tableNav = [[UINavigationController alloc]init];
+    [tableNav pushViewController:uVC animated:NO];
 
-    //Le asignamos el array con los controladores
-    [navVC pushViewController:uVC animated:NO];
+    UINavigationController *charNav = [[UINavigationController alloc]init];
+    [charNav pushViewController:charVC animated:NO];
+
+    UISplitViewController *splitVC = [[UISplitViewController alloc]init];
+    [splitVC setViewControllers:@[tableNav,charNav]];
+
+    //Asignamos delegados
+    splitVC.delegate = charVC;
+    uVC.delegate = charVC;
     
     //Lo asignamos como root
-    [self.window setRootViewController:navVC];
+    [self.window setRootViewController:splitVC];
     
     //Activamos la window
     [self.window makeKeyAndVisible];

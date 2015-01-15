@@ -157,12 +157,23 @@
         character = [self.model rebelCharacterAtIndex:indexPath.row];
     }
     
-    //crear un characterVC
-    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc]initWithModel:character];
+    //Notificar al delegado
+    if ([self.delegate respondsToSelector:@selector(starWarsUniverseViewController:didSelectCharacter:)]){
+        //Entiende el mensaje que le mando
+        [self.delegate starWarsUniverseViewController:self
+                                   didSelectCharacter:character];
+    }
     
-    //pushearlo
-    [self.navigationController pushViewController:charVC animated:YES];
+    //Enviamos una notificación
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
+    NSDictionary *info = @{CHARACTER_KEY : character};
+    
+    NSNotification *n = [[NSNotification alloc]initWithName:CHARACTER_DID_CHANGE_NOTIFICATION_NAME
+                                                     object:self
+                                                   userInfo:info];
+
+    [nc postNotification:n];
 }
 
 @end
