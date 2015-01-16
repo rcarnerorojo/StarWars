@@ -176,4 +176,16 @@
     [nc postNotification:n];
 }
 
+#pragma mark - RCRStarWarsUniverseViewControllerDelegate
+
+-(void)starWarsUniverseViewController:(RCRStarWarsUniverseViewController *)uVC didSelectCharacter:(RCRStarWarsCharacter *)character{
+    
+    //Crear un CharacterVC
+    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc]initWithModel:character];
+    
+    //Pushearlo
+    [self.navigationController pushViewController:charVC animated:YES];
+    
+}
+
 @end

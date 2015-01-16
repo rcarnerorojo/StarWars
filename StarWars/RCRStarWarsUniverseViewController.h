@@ -27,7 +27,7 @@
 
 @end
 
-@interface RCRStarWarsUniverseViewController : UITableViewController
+@interface RCRStarWarsUniverseViewController : UITableViewController<RCRStarWarsUniverseViewControllerDelegate>
 
 @property (weak,nonatomic) id <RCRStarWarsUniverseViewControllerDelegate> delegate;
 

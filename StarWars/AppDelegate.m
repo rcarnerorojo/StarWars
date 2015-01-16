@@ -19,31 +19,13 @@
     //Creamos una window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.backgroundColor = [UIColor orangeColor]; //color de fondo
-    
-    // Creamos el modelo
-    RCRStarWarsUniverse *model = [[RCRStarWarsUniverse alloc]init];
-    
-    // Creamos los controladores
-    RCRStarWarsUniverseViewController *uVC = [[RCRStarWarsUniverseViewController alloc]initWithModel:model style:UITableViewStylePlain];
-    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:[model imperialCharacterAtIndex:0]];
-    
-    //Creamos los combinadores
-    UINavigationController *tableNav = [[UINavigationController alloc]init];
-    [tableNav pushViewController:uVC animated:NO];
-
-    UINavigationController *charNav = [[UINavigationController alloc]init];
-    [charNav pushViewController:charVC animated:NO];
-
-    UISplitViewController *splitVC = [[UISplitViewController alloc]init];
-    [splitVC setViewControllers:@[tableNav,charNav]];
-
-    //Asignamos delegados
-    splitVC.delegate = charVC;
-    uVC.delegate = charVC;
-    
-    //Lo asignamos como root
-    [self.window setRootViewController:splitVC];
+    //Compruebo el tipo de pantalla
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+        //tableta
+        [self configureForPad];
+    }else{
+        [self configureForPhone];
+    }
     
     //Activamos la window
     [self.window makeKeyAndVisible];
@@ -74,8 +56,54 @@
 }
 
 
-#pragma mark - Utils
+#pragma mark - Configuration
 
+-(void)configureForPad{
+    
+    // Creamos el modelo
+    RCRStarWarsUniverse *model = [[RCRStarWarsUniverse alloc]init];
+    
+    // Creamos los controladores
+    RCRStarWarsUniverseViewController *uVC = [[RCRStarWarsUniverseViewController alloc]initWithModel:model style:UITableViewStylePlain];
+    RCRCharacterViewController *charVC = [[RCRCharacterViewController alloc] initWithModel:[model imperialCharacterAtIndex:0]];
+    
+    //Creamos los combinadores
+    UINavigationController *tableNav = [[UINavigationController alloc]init];
+    [tableNav pushViewController:uVC animated:NO];
+    
+    UINavigationController *charNav = [[UINavigationController alloc]init];
+    [charNav pushViewController:charVC animated:NO];
+    
+    UISplitViewController *splitVC = [[UISplitViewController alloc]init];
+    [splitVC setViewControllers:@[tableNav,charNav]];
+    
+    //Asignamos delegados
+    splitVC.delegate = charVC;
+    uVC.delegate = charVC;
+    
+    //Lo asignamos como root
+    [self.window setRootViewController:splitVC];
+    
+}
 
+-(void)configureForPhone{
+
+    // Creamos el modelo
+    RCRStarWarsUniverse *model = [[RCRStarWarsUniverse alloc]init];
+    
+    // Creamos el controlador
+    RCRStarWarsUniverseViewController *uVC = [[RCRStarWarsUniverseViewController alloc]initWithModel:model style:UITableViewStylePlain];
+    
+    //Creamos el combinador
+    UINavigationController *navVC = [[UINavigationController alloc]init];
+    [navVC pushViewController:uVC animated:NO];
+    
+    //Asignamos delegados
+    uVC.delegate = uVC;
+    
+    //Lo asignamos como root
+    [self.window setRootViewController:navVC];
+    
+}
 
 @end
