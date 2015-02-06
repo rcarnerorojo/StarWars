@@ -178,6 +178,7 @@
 
 #pragma mark - RCRStarWarsUniverseViewControllerDelegate
 
+//Lo usamos cuando el dispositivo es un iPhone
 -(void)starWarsUniverseViewController:(RCRStarWarsUniverseViewController *)uVC didSelectCharacter:(RCRStarWarsCharacter *)character{
     
     //Crear un CharacterVC
